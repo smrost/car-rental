@@ -33,32 +33,40 @@ public class Main {
                 break;
 
             case 2:
-                for (Car car : db.getOfAvailableCars()) {
+                for (Car car : db.getAvailableCars()) {
                     System.out.println(car);
                 }
                 System.out.println("Enter car id");
                 userInput = scanner.nextInt();
-                for (Car car : db.getOfAvailableCars()) {
+                for (Car car : db.getAvailableCars()) {
                     if (car.getCarID() == userInput) {
                         db.rent(car);
-                        System.out.println("car is now rented");
+                        System.out.println("Car is now rented\n ");
+//                        db.returnRentedCar();
                         break;
                     }
 
                 }
-                for (Car car : db.getOfAvailableCars()) {
-                    System.out.println(car);
+                System.out.println("These are the remaining cars:\n ");
+                for (Car car : db.getAvailableCars()) {
+                    System.out.println(car.getBrand());
                 }
-                break;
+                db.returnRentedCar();
+                    break;
+//                }
 
             case 3:
                 System.out.println("Thanks for visiting our site!");
                 System.exit(0);
-                default:
-                    System.out.println("Option not available");
+            default:
+                System.out.println("Option not available");
+
+        }
 
 
-
+//               System.out.println("\n This is the car you rented:\n ");
+//                for (Car car : db.getRentedCars()) {
+//                    System.out.println(car.getBrand());
 
 //        System.out.println(database.getCars());
 //        System.out.println(database.car1.getRentPrice());
@@ -67,5 +75,5 @@ public class Main {
 
         }
     }
-}
+
 
