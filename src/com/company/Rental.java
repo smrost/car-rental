@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Rental {
-    //be able to book a car
+    //Be able to book a car
     public void booking(){
 
     }
